@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Budget Tracker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+
+    <header>
+        <h1>💰 Student Budget Tracker</h1>
+        <p>Track your income and expenses easily.</p>
+    </header>
+
+    <section class="balance-card">
+        <h2>Current Balance</h2>
+        <h1 id="balance">FCFA 0</h1>
+    </section>
+
+    <section class="summary">
+
+        <div class="card income">
+            <h3>Income</h3>
+            <p id="income">FCFA 0</p>
+        </div>
+
+        <div class="card expense">
+            <h3>Expenses</h3>
+            <p id="expense">FCFA 0</p>
+        </div>
+
+    </section>
+
+    <section class="form-section">
+
+        <h2>Add Transaction</h2>
+
+        <form id="transaction-form">
+
+            <input
+                type="text"
+                id="description"
+                placeholder="Description"
+                required>
+
+            <input
+                type="number"
+                id="amount"
+                placeholder="Amount"
+                min="0.01"
+                step="0.01"
+                required>
+
+            <select id="type">
+                <option value="income">Income</option>
+                <option value="expense">Expense</option>
+            </select>
+
+            <select id="category">
+                <option value="Food">Food</option>
+                <option value="Transport">Transport</option>
+                <option value="Textbooks">Textbooks</option>
+                <option value="Rent">Rent</option>
+                <option value="Entertainment">Entertainment</option>
+                <option value="Other">Other</option>
+            </select>
+
+            <button type="submit">
+                Add Transaction
+            </button>
+
+        </form>
+
+        <p id="form-error" class="error-message"></p>
+
+    </section>
+
+    <section class="chart-section">
+        <h2>Expense Breakdown</h2>
+        <canvas id="expense-chart"></canvas>
+        <p id="no-expenses-msg" class="empty-message">No expenses yet — add one to see your breakdown.</p>
+    </section>
+
+    <section>
+
+        <h2>Transaction History</h2>
+
+        <ul id="transaction-list">
+
+        </ul>
+
+    </section>
+
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.min.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>
